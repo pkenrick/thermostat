@@ -40,4 +40,23 @@ describe('Thermostat', function(){
     expect(function(){thermostat.increase()}).toThrowError('Can\'t increase above ' + thermostat.maximumTemp + ' degrees')
   });
 
+  it('has a different maximum temperature when power saving mode off', function(){
+    thermostat.powerSavingSwitch();
+    for(var i = thermostat.temperature; i < thermostat.maximumTemp; i++) {
+      thermostat.increase();
+    };
+    expect(function(){thermostat.increase()}).toThrowError('Can\'t increase above ' + thermostat.maximumTemp + ' degrees')
+  });
+
+  it('temperature can be reset', function(){
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(thermostat.DEFAULT_TEMP);
+  });
+
 });
+
+
+
+
+
+
