@@ -5,6 +5,8 @@ function Thermostat(temperature){
   this.DEFAULT_TEMP = 20;
   this.MAXIMUM_TEMP_PS_OFF = 32;
   this.MAXIMUM_TEMP_PS_ON = 25;
+  this.LOW_USAGE = 18;
+  this.HIGH_USAGE = 25;
 
   this.temperature = typeof temperature === 'undefined' ? this.DEFAULT_TEMP : temperature;
   this.powerSavingMode = true;
@@ -46,5 +48,15 @@ Thermostat.prototype = {
 
   reset: function() {
     this.temperature = this.DEFAULT_TEMP;
+  },
+
+  displayUsage: function() {
+    if(this.temperature < this.LOW_USAGE) {
+      return 'low-usage';
+    } else if(this.temperature >= this.HIGH_USAGE) {
+      return 'high-usage';
+    } else {
+      return 'medium-usage';
+    }
   }
 };

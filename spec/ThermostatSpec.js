@@ -49,14 +49,34 @@ describe('Thermostat', function(){
   });
 
   it('temperature can be reset', function(){
+    for(var i = 0; i < 3; i++) {
+      thermostat.increase();
+    }
     thermostat.reset();
     expect(thermostat.temperature).toEqual(thermostat.DEFAULT_TEMP);
   });
 
+  describe('Usage', function(){
+    describe('displays the temperature', function(){
+      it('in green when energy usage low', function(){
+        for(var i = 0; i < 3; i++) {
+          thermostat.decrease();
+        }
+        expect(thermostat.displayUsage()).toEqual('low-usage');
+      });
+
+      it('in yellow when energy usage average', function(){
+        expect(thermostat.displayUsage()).toEqual('medium-usage');
+      });
+
+      it('in red when energy usage high', function(){
+        for(var i = 0; i < 5; i++) {
+          thermostat.increase();
+        }
+        expect(thermostat.displayUsage()).toEqual('high-usage');
+      });
+
+    });
+  });
+
 });
-
-
-
-
-
-
