@@ -3,18 +3,25 @@
 
   <head>
     <title>The PS OFF/ON Thermostat!</title>
+    <script src="jquery-3.0.0.min.js"></script>
   </head>
 
-  <body>
-    <h1 id='temperature'>--</h1>
+  <center><body>
+    <h1 id='temperature'></h1>
     <button id='temperature-increase' type='button'>+</button> 
     <button id='temperature-decrease' type='button'>-</button> 
-    <button id='temperature-reset' type='button'>Reset</button>
+    <button id='temperature-reset' type='button'>Reset</button> 
     <p>
       The power saving mode is <span id='power-saving-mode'></span>.
     </p>
-    <button id='power-saving-switch' type='button'>Turn Off</button>
-  </body>
+    <button id='power-saving-switch' type='button'>Change</button>
+    
+    <script src="src/Thermostat.js"></script>
+    <script src="interface.js"></script>
+    <link href="colours.css" rel="stylesheet" type="text/css"
+
+    </script>
+  </body></center>
 
 </html>
 

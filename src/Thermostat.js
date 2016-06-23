@@ -60,3 +60,5 @@ Thermostat.prototype = {
     }
   }
 };
+
+

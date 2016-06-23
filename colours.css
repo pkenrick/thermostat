@@ -1,0 +1,23 @@
+.low-usage {
+  color: green;
+  border: thin solid black;
+  text-align: center;
+  width: 95px;
+}
+
+.medium-usage {
+  color: orange;
+  border: thin solid black;
+  text-align: center;
+  width: 95px;
+}
+
+.high-usage {
+  color: red;
+  border: thin solid black;
+  text-align: center;
+  width: 95px;
+}
+
+
+bbcc0883c4fa301a29e570b33a9e1394
