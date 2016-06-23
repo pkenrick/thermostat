@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Thermostat</title>
+    <link rel='stylesheet' type='text/css' href='stylesheet.css'>
   </head>
   <body>
     <section>
@@ -20,40 +21,6 @@
     <script src="jquery.js"></script>
     <script src="src/Thermostat.js"></script>
     <script src="manager.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-                 var thermostat = new Thermostat();
-
-                 $("#temperature").text(thermostat.temperature);
-
-                 $("#temperature-up").click(function () {
-                   thermostat.up();
-                   $("#temperature").text(thermostat.temperature);
-                 });
-
-                 $("#temperature-down").click(function () {
-                   thermostat.down();
-                   $("#temperature").text(thermostat.temperature);
-                 });
-
-                 $("#temperature-reset").click(function () {
-                   thermostat.reset();
-                   $("#temperature").text(thermostat.temperature);
-                 });
-
-                 $("#powersaving-on").click(function () {
-                   $("#power-saving-status").text("on");
-                   thermostat.switchPowerSavingModeOn();
-                 });
-
-                 $("#powersaving-off").click(function () {
-                   $("#power-saving-status").text("off");
-                   thermostat.switchPowerSavingModeOff();
-                 });
-
-
-      });
-    </script>
   </body>
 </html>
 
