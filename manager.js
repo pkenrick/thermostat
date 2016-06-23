@@ -1,4 +1,5 @@
 $(document).ready(function() {
+ 
  var thermostat = new Thermostat();
 
  updateTemp();
@@ -28,21 +29,19 @@ $(document).ready(function() {
    thermostat.switchPowerSavingModeOff();
  });
 
-
-
  $("#current-city").change(function () {
    var city = $("#current-city").val();
-   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city  + '&appid=1ba251876150a3d6b1093f2689309918&units=metric', function(data) {
-   $("#outside-weather").text(data.main.temp);
-   });
- });
+   displayWeather(city);
+  });
 
-
-
-
-
-
-
+ function displayWeather(city) {
+  var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+  var token = '&appid=1ba251876150a3d6b1093f2689309918';
+  var units = '&units=metric';
+  $.get(url + token + units, function(data){
+    $("#outside-weather").text(data.main.temp);
+  });
+ };
 
  function updateTemp(){
   $("#temperature").attr('class', thermostat.energyUsage());
