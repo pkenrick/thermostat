@@ -47,12 +47,12 @@ Thermostat.prototype.switchPowerSavingModeOn = function() {
 
 Thermostat.prototype.isMaximumTemperature = function() {
   if (this.isPowerSavingModeOn() === false) {
-    return this.temperature === this.MAX_LIMIT_PSM_ON;
+    return this.temperature === this.MAX_LIMIT_PSM_OFF;
   }
-  return this.temperature === this.MAX_LIMIT_PSM_OFF;
+  return this.temperature === this.MAX_LIMIT_PSM_ON;
 };
 
-Thermostat.prototype.resetTemperature = function() {
+Thermostat.prototype.reset = function() {
   this.temperature = this.DEFAULT_TEMPERATURE;
 };
 

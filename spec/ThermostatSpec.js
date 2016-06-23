@@ -54,8 +54,10 @@ describe('Thermostat', function() {
 
   describe('when power saving mode is off', function() {
     it('has a maximum temperature of 32 degrees', function() {
+      thermostat.switchPowerSavingModeOff();
       for (var i = 0; i < 13; i++) {
         thermostat.up();
+        console.log(thermostat.temperature)
       }
       expect(thermostat.getCurrentTemperature()).toEqual(32);
     });
@@ -65,7 +67,7 @@ describe('Thermostat', function() {
     for (var i = 0; i < 6; i++) {
       thermostat.up();
     }
-    thermostat.resetTemperature();
+    thermostat.reset();
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
@@ -87,7 +89,7 @@ describe('Thermostat', function() {
 
     describe('when the temperature is anything else', function() {
       it('it is considered high-usage', function() {
-        thermostat.powerSavingMode = true;
+        thermostat.powerSavingMode = false;
         for (var i = 0; i < 6; i++) {
         thermostat.up();
         }
