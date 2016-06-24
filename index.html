@@ -6,31 +6,34 @@
     <script src="jquery-3.0.0.min.js"></script>
   </head>
 
-  <center><body>
-    <h1 id='temperature'></h1>
-    <button id='temperature-increase' type='button'>+</button> 
-    <button id='temperature-decrease' type='button'>-</button> 
-    <button id='temperature-reset' type='button'>Reset</button> 
-    <p>
-      The power saving mode is <span id='power-saving-mode'></span>. <button id='power-saving-switch' type='button'>Change</button>
-    </p>
-    <section>
-      Find the temperature in your city: 
-      <select id='selected-city'>
-        <option value='london'>London</option>
-        <option value='new-york'>New York</option>
-        <option value='bangkok'>Bangkok</option>
-        <option value='auckland'>Auckland</option>
-      </select>
-      <br><h3>Current Temp: <span id='outside-temp'></span>&#176C</h3>
-    </section>
-    
+  <body>
+    <div id='background'>
+      <div id='container'>
+        <h1 id='temperature'></h1>
+        <button id='temperature-increase' type='button'>+</button> 
+        <button id='temperature-decrease' type='button'>-</button> 
+        <button id='temperature-reset' type='button'>Reset</button> 
+        <p>
+          The power saving mode is <span id='power-saving-mode'></span>. <button id='power-saving-switch' type='button'>Change</button>
+        </p>
+        <section>
+          Find the temperature in your city: 
+          <select id='selected-city'>
+            <option value='london'>London</option>
+            <option value='new-york'>New York</option>
+            <option value='bangkok'>Bangkok</option>
+            <option value='auckland'>Auckland</option>
+          </select>
+          <br><h3>Current Temp: <span id='outside-temp'></span>&#176C</h3>
+        </section>
+      </div>
+    </div>
     <script src="src/Thermostat.js"></script>
     <script src="interface.js"></script>
-    <link href="colours.css" rel="stylesheet" type="text/css"
+    <link href="colours.css" rel="stylesheet" type="text/css">
 
     </script>
-  </body></center>
+  </body>
 
 </html>
 
